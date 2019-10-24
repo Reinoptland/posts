@@ -23,8 +23,8 @@
 
 ## Make Components have dynamic data, so state and props
 
-1. Think about where the data needs to live
-1. Think about what should be props and what should be state
+1. X Think about where the data needs to live
+1. X Think about what should be props and what should be state
 
 ## Decision on where state lives:
 
@@ -40,17 +40,17 @@ gets props from Post: this.props.comment and this.props.content
 
 ## Add state to App -> pass down to Post
 
-- Define initial state in App for posts (array of object)
-- Render the posts in app using map
-- Pass props to the post component
-- Use props in Post to render the author and text dynamically
+- X Define initial state in App for posts (array of object)
+- X Render the posts in app using map
+- X Pass props to the post component
+- X Use props in Post to render the author and text dynamically
 
 ## Add state to Post -> pass down to Comment
 
-- Define initial state Post for comments (empty array?)
-- Render comments using in Post using map
-- Pass props to the comment component
-- Use props in Comment to render the commenter and content
+- X Define initial state Post for comments -> arry of objects
+- X Render comments in Post using map
+- X Pass props to the comment component
+- X Use props in Comment to render the commenter and content
 
 ## Delete a post
 
