@@ -2,8 +2,8 @@ import React, { Component } from "react";
 
 class PostForm extends Component {
   state = {
-    author: "fake author",
-    text: " fake news"
+    author: "",
+    text: ""
   };
 
   // Simple solution, make multiple handlers

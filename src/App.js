@@ -22,8 +22,11 @@ class App extends Component {
   };
 
   addPost = (author, text) => {
-    console.log("ADD POST IN APP, author: ", author, "text: ", text);
-    // we need an id
+    const id = Math.round(Math.random() * 100000000);
+    console.log("ADD POST IN APP, author: ", author, "text: ", text, id);
+    const posts = [...this.state.posts, { id: id, author: author, text: text }];
+    console.log(posts);
+    this.setState({ posts: posts });
   };
 
   render() {

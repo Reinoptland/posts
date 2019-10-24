@@ -68,4 +68,4 @@ gets props from Post: this.props.comment and this.props.content
 - X Turn PostForm into a controlled form (so reads value from state, and onChange handlers use setState)
 - X Get value from form onSubmit (also preventDefault)
 - X Use out callback prop addPost to call back to App
-- Make sure addPost changes the state of the App component (using setState)
+- X Make sure addPost changes the state of the App component (using setState)
