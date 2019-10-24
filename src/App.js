@@ -13,9 +13,12 @@ class App extends Component {
     ]
   };
 
-  deletePost = id => {
-    console.log("DELETE POST IN APP, ID:", id);
+  deletePost = idToDelete => {
+    console.log("DELETE POST IN APP, ID:", idToDelete);
     // TODO: setState here at some point
+    const posts = this.state.posts.filter(post => post.id !== idToDelete);
+    // console.log(posts); check if transformation worked
+    this.setState({ posts: posts });
   };
 
   render() {

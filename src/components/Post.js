@@ -15,7 +15,7 @@ class Post extends Component {
   };
 
   render() {
-    console.log("PROPS IN POST:", this.props);
+    // console.log("PROPS IN POST:", this.props);
     return (
       <div>
         <h1>Post</h1>
