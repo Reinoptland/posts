@@ -21,11 +21,16 @@ class App extends Component {
     this.setState({ posts: posts });
   };
 
+  addPost = (author, text) => {
+    console.log("ADD POST IN APP, author: ", author, "text: ", text);
+    // we need an id
+  };
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <PostForm />
+          <PostForm addPost={this.addPost} />
           {this.state.posts.map(post => {
             return (
               <Post
