@@ -13,6 +13,11 @@ class App extends Component {
     ]
   };
 
+  deletePost = id => {
+    console.log("DELETE POST IN APP, ID:", id);
+    // TODO: setState here at some point
+  };
+
   render() {
     return (
       <div className="App">
@@ -25,6 +30,7 @@ class App extends Component {
                 author={post.author}
                 text={post.text}
                 id={post.id}
+                deletePost={this.deletePost}
               />
             );
           })}
@@ -33,5 +39,12 @@ class App extends Component {
     );
   }
 }
+
+// Putting functions outside of app will not work:
+// deletePost = id => {
+//   console.log("DELETE POST IN APP, ID:", id);
+//   this.setState needs set state of App,
+//    won't work if you put this function outside of App
+// };
 
 export default App;

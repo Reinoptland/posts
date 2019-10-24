@@ -54,11 +54,11 @@ gets props from Post: this.props.comment and this.props.content
 
 ## Delete a post
 
-- App manages posts so define deletePost in App
-- Pass deletePost callback as a prop the Post component
-- Make a button in Post component to delete it
-- Make an eventListener and handler so we can somethin when the button gets clicked
-- Use our callback prop deletePost to call back to App
+- X App manages posts so define deletePost in App
+- X Pass deletePost callback as a prop the Post component
+- X Make a button in Post component to delete it
+- X Make an eventListener and handler so we can somethin when the button gets clicked
+- X Use our callback prop deletePost to call back to App
 - Make sure deletePost changes the state of the App component (using setState)
 
 ## Adding post

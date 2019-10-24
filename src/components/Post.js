@@ -8,13 +8,22 @@ class Post extends Component {
       { id: 2, commenter: "David", content: "I see ... " }
     ]
   };
+
+  handleDelete = () => {
+    // console.log("DELETE POST"); just checking if listener and handler work
+    this.props.deletePost(this.props.id); // where can find the id of this post?
+  };
+
   render() {
+    console.log("PROPS IN POST:", this.props);
     return (
       <div>
         <h1>Post</h1>
         <h2>Author: {this.props.author}</h2>
         <p>{this.props.text}</p>
+        <button onClick={this.handleDelete}>DELETE POST</button>
         <div>
+          <h4>Comments</h4>
           {this.state.comments.map(comment => {
             return (
               <Comment
