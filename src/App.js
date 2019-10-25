@@ -5,28 +5,49 @@ import PostForm from "./components/PostForm";
 
 class App extends Component {
   state = {
-    posts: [
-      { id: 1, author: "Rein", text: "aksjfasdcvsbvsbvscv`sdc`sc" },
-      { id: 2, author: "David", text: "These things happen" },
-      { id: 3, author: "Jeroen", text: "You do not have to make it on Jeroen" },
-      { id: 4, author: "Wouter", text: "7 Productivity hacks for Asana" }
-    ]
+    posts: []
   };
+
+  componentDidMount() {
+    fetch("http://localhost:4000/posts")
+      .then(response => response.json())
+      .then(posts => this.setState({ posts: posts }));
+  }
 
   deletePost = idToDelete => {
     // console.log("DELETE POST IN APP, ID:", idToDelete);
     // TODO: setState here at some point
+
+    fetch(`http://localhost:4000/posts/${idToDelete}`, {
+      //`http://localhost:4000/posts/1`
+      method: "DELETE"
+    });
+
     const posts = this.state.posts.filter(post => post.id !== idToDelete);
     // console.log(posts); check if transformation worked
     this.setState({ posts: posts });
   };
 
   addPost = (author, text) => {
-    const id = Math.round(Math.random() * 100000000);
+    // const id = Math.round(Math.random() * 100000000); // server will create an id
     // console.log("ADD POST IN APP, author: ", author, "text: ", text, id);
-    const posts = [...this.state.posts, { id: id, author: author, text: text }];
-    // console.log(posts);
-    this.setState({ posts: posts });
+    const newPost = { author: author, text: text };
+    // const posts = [...this.state.posts, newPost];
+
+    fetch("http://localhost:4000/posts", {
+      method: "POST",
+      body: JSON.stringify(newPost),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+      .then(response => response.json())
+      .then(post => {
+        const posts = [...this.state.posts, post];
+        this.setState({ posts: posts });
+      });
+
+    // this.setState({ posts: posts });
   };
 
   render() {

@@ -4,10 +4,18 @@ import Comment from "./Comment";
 class Post extends Component {
   state = {
     comments: [
-      { id: 1, commenter: "Wouter", content: "Cool story bro" },
-      { id: 2, commenter: "David", content: "I see ... " }
+      //   { id: 1, commenter: "Wouter", content: "Cool story bro" },
+      //   { id: 2, commenter: "David", content: "I see ... " }
     ]
   };
+
+  componentDidMount() {
+    // We need to fetch
+    // We need the ID for this post -> this.props.id
+    fetch(`http://localhost:4000/posts/${this.props.id}/comments`)
+      .then(response => response.json())
+      .then(comments => this.setState({ comments: comments }));
+  }
 
   handleDelete = () => {
     // console.log("DELETE POST"); just checking if listener and handler work

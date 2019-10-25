@@ -1,0 +1,59 @@
+{
+  "posts": [
+    {
+      "id": 2,
+      "author": "David",
+      "text": "These things happen"
+    },
+    {
+      "id": 3,
+      "author": "Jeroen",
+      "text": "You do not have to make it on Jeroen"
+    },
+    {
+      "id": 4,
+      "author": "Wouter",
+      "text": "7 Productivity hacks for Asana"
+    },
+    {
+      "author": "Miloud",
+      "text": "Data driven growth hacking yo...",
+      "id": 5
+    },
+    {
+      "author": "Rein",
+      "text": "Hi",
+      "id": 12
+    },
+    {
+      "author": "Rein",
+      "text": "hello",
+      "id": 13
+    },
+    {
+      "author": "Hello",
+      "text": "Hello",
+      "id": 14
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "commenter": "Wouter",
+      "content": "Cool story bro",
+      "postId": 2
+    },
+    {
+      "id": 2,
+      "commenter": "David",
+      "content": "I see ... ",
+      "postId": 3
+    },
+    {
+      "id": 3,
+      "commenter": "Not David",
+      "content": "I see ... as well ",
+      "postId": 3
+    }
+  ]
+}
